@@ -1,0 +1,46 @@
+${view:header}
+<body>
+	<div class="row m-3" id="app">
+
+		<div class="col-lg-12">
+
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Welcome</h5>
+					<hr>
+					<p>
+						Welcome to the Dulce Web Framework!
+					</p>
+					<p class="card-text">{{ message }}</p>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</body>
+${view:footer}
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				message: 'Hello Vue!'
+			},
+			created(){
+				this.getRemoteData();
+			},
+			methods: {
+				async getRemoteData(){
+					try{
+						const response = await fetch("home/testMethod");
+						const data = await response.json();
+						this.message = data.stuff;
+					}
+					catch(error){
+						console.error(error);
+					}
+				}
+			}
+		})
+	</script>
+</html>
