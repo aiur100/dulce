@@ -5,7 +5,21 @@ function assetPath(assetName){
 function loadAsset(assetName){
 	const fs = require('fs');
 	const file = assetPath(assetName);
-	return 	fs.readFileSync(file).toString("utf8");
+	return 	fs.readFileSync(file);
 }
 
-module.exports = { loadAsset };
+function extension(assetName){
+	return assetName.split(".")[1];
+}
+
+function contentType(extension){
+	const types = {
+		"css":"text/css",
+		"jpg":"image/jpeg",
+		"jpeg":"image/jpeg",
+		"js":"text/javascript"
+	};
+	return types[extension];
+}
+
+module.exports = { loadAsset, contentType, extension };

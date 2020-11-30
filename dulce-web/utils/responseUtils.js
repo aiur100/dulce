@@ -5,11 +5,12 @@ const HTML_HEADER =  {
 const JSON_HEADER = {
     "Content-Type":"application/json"
 }
-function buildResponse(statusCode = 200, body, headers = null,jsonEncode = true) {
+function buildResponse(statusCode = 200, body, headers = null,jsonEncode = true, extras = {}) {
     return {
         statusCode,
         body: jsonEncode ? JSON.stringify(body) : body,
-        headers: {...JSON_HEADER,...headers }
+        headers: {...JSON_HEADER,...headers },
+        ...extras
     }
 }
 

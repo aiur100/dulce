@@ -5,7 +5,6 @@ const viewLoader = require("./utils/viewLoader");
 class BaseController {
  
 	constructor(){
-
 	}
 	/**
 	 * @param {string} viewName 

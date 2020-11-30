@@ -2,22 +2,22 @@ service: lambda-web
 plugins:
   - serverless-offline
   - serverless-api-gateway-caching
+  - serverless-apigw-binary
+  - serverless-apigwy-binary
 
 custom:
-  # Enable or disable caching globally
   apiGatewayCaching:
-    enabled: true
+    enabled: false
+  apigwBinary:
+    types:
+      - 'image/jpeg'
 frameworkVersion: '1'
 
 provider:
   name: aws
   runtime: nodejs12.x
-
-  # you can overwrite defaults here
   stage: dev
   region: us-east-1
-  
-
   environment: ${file(./env.yml)}
 
 functions:
@@ -28,20 +28,15 @@ functions:
       - http:
           path: view/{resource}
           method: get
-          caching:
-            enabled: true
       - http:
           path: view/{resource}/{methodName}
           method: get
-          caching:
-            enabled: true
   assets:
     handler: dulce-web/assets.handler
     timeout: 30
     events:
       - http:
-          path: assets/{asset}
+          path: assets/{asset+}
           method: get
-          caching:
-            enabled: true
+          contentHandling: CONVERT_TO_BINARY
 
