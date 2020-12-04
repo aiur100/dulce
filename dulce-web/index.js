@@ -5,8 +5,8 @@ module.exports.handler = async event => {
     const Resource = resourceFactory(event.pathParameters.resource);
     const methodName = event.pathParameters.methodName;
     return methodName ? 
-            Resource[methodName]() :
-            Resource.index();
+            await Resource[methodName]() :
+            await Resource.index();
   }
   catch(error){
     const util = require('./utils/responseUtils');

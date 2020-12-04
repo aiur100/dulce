@@ -1,4 +1,7 @@
 # Dulce Web-Framework
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/aiur100/dulce.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/aiur100/dulce/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/aiur100/dulce.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/aiur100/dulce/context:javascript)
+
 **ALPHA - version 0.1.0** 
 Inspired by Laravel, a web-application framework built for NodeJS, AWS API Gateway, AWS Lambda, and DynamoDB.  Deploy statically generated HTML pages that have the server side power of running Lambda.  
 
@@ -6,8 +9,7 @@ Inspired by Laravel, a web-application framework built for NodeJS, AWS API Gatew
 * Server the initial HTML documents with templating, and other CSS or JavaScript assets.  
 
 ## Please be warned! 
-### This is a very rough work in progress as I explore the ideas surrounding this type of a framework.
-### Yes, I realize you can do this with express, but I wanted to try out my own ideas. :) 
+This is a very rough work in progress as I explore the ideas surrounding this type of a framework. Yes, I realize you can do this with express, but I wanted to try out my own ideas. :) 
 
 # Structure and Architecture 
 * `app` - Store all *your own* application logic.
