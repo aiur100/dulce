@@ -5,8 +5,8 @@
 **ALPHA - version 0.1.0** 
 Inspired by Laravel, a web-application framework built for NodeJS, AWS API Gateway, AWS Lambda, and DynamoDB.  Deploy statically generated HTML pages that have the server side power of running Lambda.  
 
-* You can create endpoints for asynchronous web application like functionality. 
-* Server the initial HTML documents with templating, and other CSS or JavaScript assets.  
+* You can create endpoints for asynchronous web application like functionality, or single page applications.
+* Serve the initial HTML documents with templating, and other CSS or JavaScript assets.  
 
 ## Please be warned! 
 This is a very rough work in progress as I explore the ideas surrounding this type of a framework. Yes, I realize you can do this with express, but I wanted to try out my own ideas. :) 
